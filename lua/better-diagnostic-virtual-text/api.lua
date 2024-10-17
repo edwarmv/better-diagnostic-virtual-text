@@ -1033,7 +1033,7 @@ M.setup_buf = function(bufnr, opts)
 		buffer = bufnr,
 		desc = "Main event tracker for diagnostics changes",
 		callback = function(args)
-			new_diagnostics = args.data.diagnostics
+			new_diagnostics = vim.diagnostic.get()
 
 			if scheduled_update then
 				return
